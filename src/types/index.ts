@@ -7,4 +7,7 @@ export interface Story {
   time: number;
   score: number;
   descendants: number;
+  type?: 'story' | 'ask' | 'show' | 'job';
 }
+
+export type StoryFilter = 'new' | 'past' | 'comments' | 'ask' | 'show' | 'jobs' | 'submit';

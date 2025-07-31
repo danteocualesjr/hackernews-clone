@@ -61,6 +61,11 @@ body {
   text-decoration: underline;
 }
 
+.nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .separator {
   color: #000;
 }

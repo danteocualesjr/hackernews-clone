@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import StoryList from './components/StoryList';
-import { Story } from './types';
+import { Story, StoryFilter } from './types';
 import './App.css';
 
 const mockStories: Story[] = [
@@ -12,7 +12,8 @@ const mockStories: Story[] = [
     by: "developer123",
     time: Math.floor(Date.now() / 1000) - 3600,
     score: 142,
-    descendants: 28
+    descendants: 28,
+    type: 'show'
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const mockStories: Story[] = [
     by: "learner456",
     time: Math.floor(Date.now() / 1000) - 7200,
     score: 89,
-    descendants: 45
+    descendants: 45,
+    type: 'ask'
   },
   {
     id: 3,
@@ -29,7 +31,8 @@ const mockStories: Story[] = [
     by: "jsexpert",
     time: Math.floor(Date.now() / 1000) - 10800,
     score: 234,
-    descendants: 67
+    descendants: 67,
+    type: 'story'
   },
   {
     id: 4,
@@ -38,7 +41,8 @@ const mockStories: Story[] = [
     by: "ai_researcher",
     time: Math.floor(Date.now() / 1000) - 14400,
     score: 512,
-    descendants: 156
+    descendants: 156,
+    type: 'story'
   },
   {
     id: 5,
@@ -46,7 +50,8 @@ const mockStories: Story[] = [
     by: "burnout_dev",
     time: Math.floor(Date.now() / 1000) - 18000,
     score: 78,
-    descendants: 92
+    descendants: 92,
+    type: 'ask'
   },
   {
     id: 6,
@@ -55,7 +60,8 @@ const mockStories: Story[] = [
     by: "visualizer",
     time: Math.floor(Date.now() / 1000) - 21600,
     score: 203,
-    descendants: 34
+    descendants: 34,
+    type: 'show'
   },
   {
     id: 7,
@@ -263,22 +269,60 @@ const mockStories: Story[] = [
     by: "note_builder",
     time: Math.floor(Date.now() / 1000) - 108000,
     score: 567,
-    descendants: 89
+    descendants: 89,
+    type: 'show'
+  },
+  {
+    id: 31,
+    title: "Senior React Developer - Remote - $120k-$180k",
+    by: "techcorp_hr",
+    time: Math.floor(Date.now() / 1000) - 86400,
+    score: 1,
+    descendants: 0,
+    type: 'job'
+  },
+  {
+    id: 32,
+    title: "Full Stack Engineer - San Francisco - $150k-$200k + equity",
+    by: "startup_hiring",
+    time: Math.floor(Date.now() / 1000) - 172800,
+    score: 1,
+    descendants: 0,
+    type: 'job'
   }
 ];
 
 function App() {
   const [stories, setStories] = useState<Story[]>([]);
+  const [currentFilter, setCurrentFilter] = useState<StoryFilter>('new');
 
   useEffect(() => {
     setStories(mockStories);
   }, []);
 
+  const getFilteredStories = () => {
+    switch (currentFilter) {
+      case 'ask':
+        return stories.filter(story => story.type === 'ask');
+      case 'show':
+        return stories.filter(story => story.type === 'show');
+      case 'jobs':
+        return stories.filter(story => story.type === 'job');
+      case 'past':
+        return stories.sort((a, b) => a.time - b.time);
+      case 'comments':
+        return stories.sort((a, b) => b.descendants - a.descendants);
+      case 'new':
+      default:
+        return stories.sort((a, b) => b.time - a.time);
+    }
+  };
+
   return (
     <div className="App">
-      <Header />
+      <Header currentFilter={currentFilter} onFilterChange={setCurrentFilter} />
       <main className="main-content">
-        <StoryList stories={stories} />
+        <StoryList stories={getFilteredStories()} />
       </main>
     </div>
   );
