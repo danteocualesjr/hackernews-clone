@@ -134,6 +134,136 @@ const mockStories: Story[] = [
     time: Math.floor(Date.now() / 1000) - 54000,
     score: 167,
     descendants: 45
+  },
+  {
+    id: 16,
+    title: "Google announces new quantum computing breakthrough",
+    url: "https://blog.google/quantum-computing-2024",
+    by: "quantum_enthusiast",
+    time: Math.floor(Date.now() / 1000) - 57600,
+    score: 789,
+    descendants: 234
+  },
+  {
+    id: 17,
+    title: "Ask HN: How do you handle technical debt in legacy codebases?",
+    by: "legacy_maintainer",
+    time: Math.floor(Date.now() / 1000) - 61200,
+    score: 245,
+    descendants: 156
+  },
+  {
+    id: 18,
+    title: "Show HN: My weekend project - A Spotify clone using Web Audio API",
+    url: "https://github.com/musicdev/web-audio-player",
+    by: "audio_hacker",
+    time: Math.floor(Date.now() / 1000) - 64800,
+    score: 312,
+    descendants: 78
+  },
+  {
+    id: 19,
+    title: "The hidden costs of microservices architecture",
+    url: "https://engineering-blog.com/microservices-costs",
+    by: "arch_skeptic",
+    time: Math.floor(Date.now() / 1000) - 68400,
+    score: 456,
+    descendants: 189
+  },
+  {
+    id: 20,
+    title: "Ask HN: What's your favorite debugging technique?",
+    by: "bug_hunter",
+    time: Math.floor(Date.now() / 1000) - 72000,
+    score: 178,
+    descendants: 203
+  },
+  {
+    id: 21,
+    title: "Show HN: I created a browser extension to block distracting websites",
+    url: "https://focus-extension.example.com",
+    by: "productivity_ninja",
+    time: Math.floor(Date.now() / 1000) - 75600,
+    score: 134,
+    descendants: 42
+  },
+  {
+    id: 22,
+    title: "Tesla's new AI chip outperforms NVIDIA's latest GPU",
+    url: "https://tesla-ai-news.com/chip-benchmark",
+    by: "ai_hardware_news",
+    time: Math.floor(Date.now() / 1000) - 79200,
+    score: 623,
+    descendants: 287
+  },
+  {
+    id: 23,
+    title: "Ask HN: Best resources for learning machine learning in 2024?",
+    by: "ml_beginner",
+    time: Math.floor(Date.now() / 1000) - 82800,
+    score: 234,
+    descendants: 167
+  },
+  {
+    id: 24,
+    title: "Show HN: Real-time cryptocurrency tracker with WebSocket feeds",
+    url: "https://crypto-tracker-live.com",
+    by: "crypto_dev",
+    time: Math.floor(Date.now() / 1000) - 86400,
+    score: 189,
+    descendants: 56
+  },
+  {
+    id: 25,
+    title: "Why I left Silicon Valley for a remote cabin in Montana",
+    url: "https://remote-life-blog.com/leaving-sv",
+    by: "digital_nomad_dev",
+    time: Math.floor(Date.now() / 1000) - 90000,
+    score: 567,
+    descendants: 345
+  },
+  {
+    id: 26,
+    title: "Ask HN: How do you price your freelance development work?",
+    by: "freelance_dev",
+    time: Math.floor(Date.now() / 1000) - 93600,
+    score: 123,
+    descendants: 98
+  },
+  {
+    id: 27,
+    title: "Show HN: I built a GitHub Actions alternative that runs 10x faster",
+    url: "https://github.com/fastci/lightning-ci",
+    by: "ci_speedster",
+    time: Math.floor(Date.now() / 1000) - 97200,
+    score: 445,
+    descendants: 112
+  },
+  {
+    id: 28,
+    title: "The rise of WebAssembly: JavaScript's biggest competitor?",
+    url: "https://webassembly-future.com/analysis",
+    by: "wasm_advocate",
+    time: Math.floor(Date.now() / 1000) - 100800,
+    score: 378,
+    descendants: 156
+  },
+  {
+    id: 29,
+    title: "Ask HN: What's the biggest mistake you made as a junior developer?",
+    by: "senior_dev_wisdom",
+    time: Math.floor(Date.now() / 1000) - 104400,
+    score: 289,
+    descendants: 234
+  },
+  {
+    id: 30,
+    title: "Show HN: My open-source alternative to Notion built with React",
+    url: "https://github.com/noteapp/open-notion",
+    by: "note_builder",
+    time: Math.floor(Date.now() / 1000) - 108000,
+    score: 567,
+    descendants: 89
   }
 ];
 
